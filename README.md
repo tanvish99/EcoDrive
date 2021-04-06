@@ -1,6 +1,6 @@
 # EcoDrive
 
-ACM India Chapters Solution Contest
+Presented at ACM India Chapters Solution Contest and Smart India Hackathon
 
 EcoDrive is a mobile application which helps to reduce the carbon footprint of the travel proposal by car/bike pool and also lets you compare and compete with your friends on the carbon footprint of the travel. It tracks your daily carbon footprint and reward badges based on it. It also offers real-time navigation and provides daily challenges in order to reduce the carbon footprint.
 
@@ -28,11 +28,6 @@ To test the PoolDrive module
 2. Type the command 'npm install'
 3. Connect to mongoDB server
 4. To run 'node app.js'
-
-## Deployment
-
-1. To try out Activity and Community modules click [here](https://protected-sea-53017.herokuapp.com/)
-2. To try out PoolDrive module click [here](https://vast-harbor-78175.herokuapp.com/)
 
 ### Technologies used
 

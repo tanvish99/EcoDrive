@@ -1,0 +1,244 @@
+doctype html
+html(dir='ltr', lang='en')
+  head
+    meta(http-equiv='content-type', content='text/html;charset=utf-8')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Your Store
+    meta(name='description', content='My Store')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    script(src='catalog/view/javascript/jquery/jquery-2.1.1.min.js', type='text/javascript')
+    link(href='catalog/view/javascript/bootstrap/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    script(src='catalog/view/javascript/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    link(href='catalog/view/javascript/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='catalog/view/theme/default/stylesheet/stylesheet.css', rel='stylesheet')
+    link(href='catalog/view/javascript/jquery/swiper/css/swiper.min.css', type='text/css', rel='stylesheet', media='screen')
+    link(href='catalog/view/javascript/jquery/swiper/css/opencart.css', type='text/css', rel='stylesheet', media='screen')
+    script(src='catalog/view/javascript/jquery/swiper/js/swiper.jquery.js', type='text/javascript')
+    script(src='catalog/view/javascript/common.js', type='text/javascript')
+    link(href='image/catalog/cart.png', rel='icon')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    script.
+      function redeem1() {
+      alert("Discount Applied !!");
+      }
+      function redeem2() {
+      alert("Discount Applied !!");
+      }
+      function redeem3() {
+      alert("Discount Applied !!");
+      }
+      function redeem4() {
+      alert("25% Discount Applied !!!");
+      }
+      function redeem5() {
+      alert("45% Discount Applied !!!");
+      }
+      function redeem6() {
+      alert("50% Discount Applied !!!");
+      }
+  body
+    header
+      .container
+        .row
+          .col-sm-4
+            #logo
+              h1
+                a(href='#', style="color: #051c2d; font-family: 'Varela Round', sans-serif; text-align: center; font-weight: 900;") Eco Store
+          br
+    #common-home.container
+      .row
+        #content.col-sm-12
+          .swiper-viewport
+            #slideshow0.swiper-container
+              .swiper-wrapper
+                .swiper-slide.text-center
+                  img.img-responsive(src='image/cache/catalog/demo/banners/pc_Eco-conscious-products_TV.png', alt='TV')
+                  b LED TV (UE65MU9000) 
+                  ul
+                    li EU Energy Label A+ (A++ to E)
+                    li Features Energy-saving Mode
+                    li Screwless design
+                    li Used 21% sugar cane for accessory bags
+                .swiper-slide.text-center
+                  img.img-responsive(src='image/cache/catalog/demo/banners/pc_Eco-conscious-products_galaxy-note-8.png', alt='Galaxy')
+                  b Smartphone (Galaxy Note8)
+                  ul
+                    li Uses highly-efficient chargers
+                    li Features Ultra Power-Saving Mode
+                    li Uses bio-based materials
+            br
+            br
+            .swiper-pagination.slideshow0
+            .swiper-pager
+              .swiper-button-next
+              .swiper-button-prev
+          br
+          script(type='text/javascript').
+            $('#slideshow0').swiper({
+            mode: 'horizontal',
+            slidesPerView: 1,
+            pagination: '.slideshow0',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            autoplay: 2500,
+            autoplayDisableOnInteraction: true,
+            loop: true
+            });
+          h2
+            b Featured
+          .row
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/pc_Eco-conscious-products_memory.png')
+                .caption
+                  h4 Memory (20nm 8GB HBM2 DRAM-based 2nd gen. Aquabolt)
+                  ul
+                    li 2.7 times higher power efficiency
+                    li
+                      | Features engineering technology that optimizes signal transfer and heat control technologies
+                    li 1.5 times higher data transfer speed compared to 1st gen HBM2
+                  h4 Required Badges - 
+                  ul
+                    li Green Saviour (50 X)
+                    li Zemerion (55 X)
+                    li Care Taker (60 X)
+                  button.btn.btn-warning(type='button', disabled='', onclick='redeem1()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/pirate.png', width='60%', height='40%', style='text-align: center;')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/hacktoberfest.png', width='60%', height='40%', style='text-align: center;')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/adventure.png', width='60%', height='40%', style='text-align: center;')
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/pc_Eco-conscious-products_refrigerators.png')
+                .caption
+                  h4 Refrigerator (DRF427500AP)
+                  ul
+                    li ENERGY STAR® certification
+                    li Triple metal cooling
+                    li Flex temperature control (Refrigerator ↔ Freezer)
+                    li HFC-free refrigerant (R600a)
+                  h4 Required Badges - 
+                  ul
+                    li Month Champion (70 X)
+                    li Daily Star (80 X)
+                    li Leader (90 X)
+                  button.btn.btn-warning(type='button', disabled='', onclick='redeem2()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/10-contributions.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/crap.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/medal.png', width='60%', height='40%')
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/pc_Eco-conscious-products_washers.png')
+                .caption
+                  h4 Washing Machine (Quick Drive)
+                  ul
+                    li EU Energy Label A+++ (A+++ to D)
+                    li
+                      | Reduces washing time by 51% by combining a rotating disc of top-loading washing machine to front-loading washing machine
+                    li
+                      | Auto Optimal Wash measures adds the optimal amount of detergent and fabric softeners based on the conditions of the laundry
+                  h4 Required Badges - 
+                  ul
+                    li Eco Star (85 X)
+                    li Eco Green (95 X)
+                    li Treasurer (75 X)
+                  button.btn.btn-warning(type='button', disabled='', onclick='redeem3()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/trophy.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/taciturn.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/snake.png', width='60%', height='40%')
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/backcover.jpg')
+                .caption
+                  h4 Samsung wodden backcover
+                  ul
+                    li Add protection to your Smartphone with this designer case from Neo World
+                    li Made perfectly to fit your Smart Phone
+                    li This case features a hard shell plastic exterior with a soft matt finish
+                  h4 Required Badges - 
+                  ul
+                    li Favourite Accompanist (5 X)
+                    li Green Saviour (5 X)
+                    li Eco-friendly (5 X)
+                  button.btn.btn-warning(type='button', onclick='redeem4()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/novelist.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/hacktoberfest.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/leaderboard.png', width='60%', height='40%')
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/ecoamp.jpg')
+                .caption
+                  h4 Eco amp
+                  ul
+                    li Power by salt water and magnesium - no dry cell batteries required
+                    li Bright Cree led lighting
+                  h4 Required Badges - 
+                  ul
+                    li Zemerion (10 X)
+                    li Green Saviour (15 X)
+                    li Care Taker (15 X)
+                  button.btn.btn-warning(type='button', onclick='redeem5()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/pirate.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/hacktoberfest.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/adventure.png', width='60%', height='40%')
+            .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .product-thumb.transition
+                .image
+                  img.img-responsive(src='image/cache/catalog/demo/earphone1.jpg', alt='Canon EOS 5D', title='Canon EOS 5D')
+                .caption
+                  h4 Samsung wooden earphone
+                  ul
+                    li Natural wood housing for deep bass sound Soft cable
+                    li Lightweight Noise-isolating inner ear fit Fashion-conscious
+                    li
+                      | Ergonomic design Compatible with and all music devices with 3.5mm earphone jack Sensitivity
+                  h4 Required Badges - 
+                  ul
+                    li Daily Star (7 X)
+                    li Zemerion (8 X)
+                    li Care Taker (9 X)
+                  button.btn.btn-warning(type='button', onclick='redeem6()', style='color: #000000; background-color: #ffc107;') Redeem
+                br
+                .button-group
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/adventure.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/novelist.png', width='60%', height='40%')
+                  button(type='button')
+                    img.img-responsive(src='image/cache/catalog/demo/pirate.png', width='60%', height='40%')
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')

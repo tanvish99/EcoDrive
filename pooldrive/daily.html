@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <script defer src="site.js"></script>
+
+  <link rel="manifest" href="manifest.json" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily</title>
+
+    <h1><i><center>Ecodrive data</center></i></h1>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="../../assets/styles.css" rel="stylesheet" />
+
+    <style>
+        #card {
+            background: #fff;
+            max-width: 650px;
+            margin: 35px auto;
+            padding-top: 0px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 0;
+            color: rgb(192, 192, 192);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-top: 50;
+            color: #414141;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 16px;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart">
+        <apexchart type=radialBar height=350 :options="chartOptions" :series="series" />
+    </div>
+
+    <!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+    <div id="html">
+        &lt;div id="chart"> &lt;apexchart type=radialBar height=350 :options="chartOptions" :series="series" /> &lt;/div>
+    </div>
+
+    <div class="row">
+        <div class="col s12"></div>
+
+        <div class="col s4">
+            <p>
+                <div>Distance travelled:
+                    <a id="distance"></a> (in KM)</div>
+            </p>
+        </div>
+
+        <div class="col s4">
+            <p>
+                <div>Carbon emitted:
+                    <a id="myLink"></a>
+                </div>
+            </p>
+        </div>
+
+        <div class="col s4">
+            <p>
+                <div>Total Time:
+                    <a id="duration"></a> (in Hours)</div>
+            </p>
+        </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+        <script>
+            // For Saved Emission (present-past)
+            var present = [8.2345];
+            var past = [2.3697];
+            var erandom = (Math.random() * (+present - +past) + +present).toFixed(4);
+            console.log(erandom);
+
+            var present = [3.23];
+            var past = [1.36];
+            var trandom = (Math.random() * (+present - +past) + +present).toFixed(2);
+            console.log(trandom);
+
+            // For weekly average of carbon emission
+            // document.write(totalSum);
+            //      window.onload = function() {
+            //     //when the document is finished loading, replace everything
+            //     //between the <a ...> </a> tags with the value of splitText
+            // document.getElementById("seeLink").innerHTML=erandom;s
+        </script>
+
+        <script>
+            var min = 20;
+            var max = 95;
+            var random = Math.floor(Math.random() * (+max - +min)) + +min;
+            new Vue({
+                el: '#chart',
+                components: {
+                    apexchart: VueApexCharts,
+                },
+                data: {
+                    series: [random],
+                    chartOptions: {
+                        chart: {
+                            toolbar: {
+                                show: true
+                            }
+                        },
+                        plotOptions: {
+                            radialBar: {
+                                startAngle: 0,
+                                endAngle: 360,
+                                hollow: {
+                                    margin: 0,
+                                    size: '70%',
+                                    background: '#fff',
+                                    position: 'front',
+                                    dropShadow: {
+                                        enabled: true,
+                                        top: 3,
+                                        left: 0,
+                                        blur: 4,
+                                        opacity: 0.24
+                                    }
+                                },
+                                track: {
+                                    background: '#fff',
+                                    strokeWidth: '67%',
+                                    margin: 0, // margin is in pixels
+                                    dropShadow: {
+                                        enabled: true,
+                                        top: -3,
+                                        left: 0,
+                                        blur: 4,
+                                        opacity: 0.35
+                                    }
+                                },
+
+                                dataLabels: {
+                                    name: {
+                                        offsetY: -10,
+                                        show: true,
+                                        color: '#888',
+                                        fontSize: '17px'
+                                    },
+                                    value: {
+                                        formatter: function(val) {
+                                            return parseInt(val);
+                                        },
+                                        color: '#111',
+                                        fontSize: '36px',
+                                        show: true,
+                                    }
+                                }
+                            }
+                        },
+                        fill: {
+                            type: 'gradient',
+                            gradient: {
+                                shade: 'dark',
+                                type: 'horizontal',
+                                shadeIntensity: 0.5,
+                                gradientToColors: ['#1daf0f'],
+                                inverseColors: false,
+                                opacityFrom: 1,
+                                opacityTo: 1,
+                                stops: [0, 100]
+                            }
+                        },
+                        stroke: {
+                            lineCap: 'round'
+                        },
+                        labels: ['Carbon Emission'],
+
+                        title: {
+                            text: 'Daily CO2 Emitted Data',
+                            floating: true,
+                            offsetY: 320,
+                            align: 'center',
+                            style: {
+                                color: '#444'
+                            }
+                        }
+                    }
+                },
+
+            })
+
+
+
+            window.onload = function() {
+                //when the document is finished loading, replace everything
+                //between the <a ...> </a> tags with the value of splitText
+                document.getElementById("myLink").innerHTML = random;
+                document.getElementById("distance").innerHTML = erandom;
+                document.getElementById("duration").innerHTML = trandom;
+
+            }
+        </script>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>

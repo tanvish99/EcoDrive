@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script defer src="site.js"></script>
+
+    <style>
+        #wrapper {
+            position: relative;
+        }
+        
+        #over_map {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            z-index: 90;
+            right: 10px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Activity</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="manifest" href="./manifest.json" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="js/main.js"></script>
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <!-- Minified JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type='text/javascript' src='http://code.jquery.com/jquery-1.6.1.js'></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css">
+    <script type='text/javascript' src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script> -->
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+
+        $(document).ready(function() {
+            $('.tooltipped').tooltip();
+        });
+    </script>
+
+    <style>
+         ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black;
+            opacity: 0.6;
+            /* Firefox */
+        }
+        
+         :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: black;
+        }
+        
+         ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: black;
+        }
+    </style>
+
+    <style type='text/css'>
+        .add-border {
+            border-style: solid;
+            border-width: 1px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav style="background-color: #051c2d;">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="font-family: 'Varela Round', sans-serif;">EcoDrive</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-nav" style="width: 300px;">
+                <img src="images/nobody_m.original.jpg" class="responsive-img" style="height: 17em; width: 300px;">
+                <li><a style="font-size: 1.5em; font-family: 'Righteous', cursive;">Welcome! Earth saviour</a></li>
+
+                <hr>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="demo.opencart.com/redeem.html">Redeem Points</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form Fields -->
+    <div id="wrapper">
+        <div id="map" style="width:auto; height: 585px; object-fit: cover; opacity: 0.8;"></div>
+        <div id="over_map">
+            <div class="container">
+                <form action="/user" method="POST">
+                    <br>
+                    <div class="form_field">
+                        <input type="hidden" id="location1" name="create_origin" value="BVB Hubli" style="border-bottom: none; background-color: white; border-radius: 10px; border: 0.5px #051c2d solid">
+                    </div><br>
+                    <div class="form_field">
+                        <input type="text" id="location2" name="create_destination" placeholder="   Destination" style="border-bottom: none; background-color: white; border-radius: 10px; border: 0.5px #051c2d solid">
+                    </div><br>
+                    <div class="form_field">
+                        <input type="text" id="drive_mode" name="create_mode" placeholder="     DRIVING or TRANSIT" style="border-bottom: none; background-color: white; border-radius: 10px; border: 0.5px #051c2d solid">
+                    </div><br>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s3">
+                        <button class="btn waves-effect waves-light btn tooltipped" data-position="bottom" data-tooltip="CO2 is 6.7 KG/L" type="submit" name="action" style="background-color: #ffc107; border-radius: 15px; width: 5em; "><i class="material-icons">directions_car</i></button>
+                    </div>
+                    <div class="col s3">
+                        <button class="btn waves-effect waves-light btn tooltipped" data-position="bottom" data-tooltip="CO2 is 5.79 KG/L" type="submit" name="action" style="background-color: #ffc107; border-radius: 15px; width: 5em;"><i class="material-icons">motorcycle</i></button>
+                    </div>
+                    <div class="col s3">
+                        <button class="btn waves-effect waves-light btn tooltipped" data-position="bottom" data-tooltip="CO2 is 0" type="submit" name="action" style="background-color: #ffc107; border-radius: 15px; width: 5em;"><i class="material-icons">directions_bike</i></button>
+                    </div>
+                    <div class="col s3">
+                        <button class="btn waves-effect waves-light btn tooltipped" data-position="bottom" data-tooltip="CO2 is 0.16 KG/L" type="submit" name="action" style="background-color: #ffc107; border-radius: 15px; width: 5em;"><i class="material-icons">directions_bus</i></button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="nav-center" role="navigation" style="background-color: #051c2d; position: static; color:white; position: fixed; bottom: 0;">
+        <div class="nav-wrapper container">
+            <ul>
+                <li><a href="/dashboard">Pool Drive</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="/community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        var map, infoWindow, pos, or, lati, long, marker;
+        var mylatlon, mylatlon1;
+
+        function initMap() {
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            var input = document.getElementById('location1');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            var input1 = document.getElementById('location2');
+            var autocomplete1 = new google.maps.places.Autocomplete(input1);
+            var myOptions = {
+                zoom: 7,
+                center: {
+                    lat: 18.397,
+                    lng: 75.644
+                },
+                mapTypeControlOptions: {
+                    mapTypeIds: []
+                }, // here´s the array of controls
+                disableDefaultUI: true, // a way to quickly hide all controls
+                mapTypeControl: true,
+                scaleControl: true,
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE
+                },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map"), myOptions);
+            // infoWindow = new google.maps.InfoWindow;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    console.log(pos + typeof(pos));
+
+                    lati = position.coords.latitude;
+                    long = position.coords.longitude;
+
+                    mylatlon = {
+                        lat: lati,
+                        lng: long
+                    };
+
+                    //my = mylatlon;
+                    // console.log(mylatlon);
+                    // console.log("tan" + my);
+                    marker = new google.maps.Marker({
+                        position: mylatlon,
+                        draggable: true,
+                        animation: google.maps.Animation.BOUNCE,
+                        map: map,
+                        title: 'Hello'
+                    });
+                    // infoWindow.setPosition(pos);
+                    // infoWindow.setContent('Location found.');
+                    // infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+
+
+
+
+
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+
+
+            directionsDisplay.setMap(map);
+
+            var onChangeHandler = function() {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+            //console.log(document.getElementById('start').value);
+            document.getElementById('location1').addEventListener('change', onChangeHandler);
+            document.getElementById('location2').addEventListener('change', onChangeHandler);
+            document.getElementById('drive_mode').addEventListener('change', onChangeHandler);
+
+
+
+
+        }
+        //google.maps.event.addDomListener(window, 'load', initMap);
+        function geocodeLatLng(geocoder, map, infowindow) {
+            // console.log("hey"+lati);
+            // var input = document.getElementById('latlng').value;
+            console.log(mylatlon1);
+            // var input = mylatlon1;
+            // var latlngStr = input.split(',', 2);
+            var latlng = mylatlon;
+            geocoder.geocode({
+                'location': latlng
+            }, function(results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        map.setZoom(11);
+                        // var marker = new google.maps.Marker({
+                        //   position: latlng,
+                        //   map: map
+                        // });
+                        // infowindow.setContent(results[0].formatted_address);
+                        // infowindow.open(map, marker);
+                        console.log(results[0].formatted_address);
+                        var neworigin = results[0].formatted_address;
+                        document.getElementById("location1").value = neworigin;
+                        console.log(neworigin);
+                    } else {
+                        window.alert('No results found');
+                    }
+                } else {
+                    window.alert('Geocoder failed due to: ' + status);
+                }
+            });
+        }
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            var geocoder = new google.maps.Geocoder;
+            var infowindow = new google.maps.InfoWindow;
+            geocodeLatLng(geocoder, map, infowindow);
+            // mylatlon = {
+            //     lat: lati,
+            //     lng: long
+            // };
+            console.log("qw" + mylatlon);
+            var l = document.getElementById('location2').value;
+            window.localStorage.setItem("loc1", l);
+            var selectedMode = document.getElementById('drive_mode').value;
+            var or = document.getElementById('location1').value;
+            directionsService.route({
+                origin: mylatlon,
+                destination: document.getElementById('location2').value,
+                travelMode: google.maps.TravelMode[selectedMode]
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+        // document.getElementsByName("create_origin").innerHTML = mylatlon;
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys&libraries=places&callback=initMap" async defer></script>
+
+
+</body>
+
+
+</html>
+
+</html>
+<!-- AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys -->

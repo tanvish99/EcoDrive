@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.opencart.com	TRUE	/	FALSE	1999999999	__cfduid	df76264b67fde94b2795289e5fdc0b7161551265726
+demo.opencart.com	TRUE	/	FALSE	1999999999	language	en-gb
+demo.opencart.com	TRUE	/	FALSE	1999999999	currency	USD
+demo.opencart.com	TRUE	/	FALSE	1999999999	OCSESSID	95efc5776040adf9164e1bcf9f
+

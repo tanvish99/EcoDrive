@@ -1,0 +1,374 @@
+doctype html
+html
+  head
+    script(defer='', src='site.js')
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='manifest', href='manifest.json')
+    meta(charset='UTF-8')
+    title Join Event
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=yes')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+    link(rel='stylesheet', href='css/invitation.css')
+    script.
+      var g = localStorage.getItem("start");
+      var h = localStorage.getItem("dest");
+      var i = localStorage.getItem("date");
+      var j = localStorage.getItem("vehicle");
+      var k = localStorage.getItem("seat");
+      console.log(g);
+      console.log(h);
+      console.log(i);
+      console.log(j);
+      console.log(k);
+      document.getElementById('result').value = JSON.stringify(g);
+  body
+    .phone(ng-app='delivcard')
+      .phone__screen
+        .phone__scroll-cont
+          .phone__content(ng-controller='DelivCtrl')
+            section.card(ng-repeat='card in cards', class='theme-{{card.themeColor}}', data-color='{{card.themeColorHex}}')
+              .card__map
+                .card__map__inner
+              section.card__part.card__part-1
+                .card__part__inner
+                  header.card__header
+                    .card__header__close-btn
+                    span.card__header__id # {{card.id}}
+                    span.card__header__price ₹{{card.price}}
+                  .card__stats(ng-style="{'background-image': 'url({{card.bgImgUrl}})'}")
+                    .card__stats__item.card__stats__item--req
+                      p.card__stats__type Vehicle
+                      span.card__stats__value {{card.requests}}
+                    .card__stats__item.card__stats__item--pledge
+                      p.card__stats__type Date
+                      span.card__stats__value {{card.pledge}}
+                    .card__stats__item.card__stats__item--weight
+                      p.card__stats__type Seats
+                      span.card__stats__value {{card.weight}}
+              section.card__part.card__part-2
+                .card__part__side.m--back
+                  .card__part__inner.card__face
+                    .card__face__colored-side
+                    h3.card__face__price ₹{{card.price}}
+                    .card__face__divider
+                    .card__face__path
+                    .card__face__from-to
+                      p {{card.fromStreet}}, {{card.fromCity}}
+                      p {{card.toStreet}}, {{card.toCity}}
+                    .card__face__deliv-date
+                      | {{card.delivDateNoun}}
+                      p {{card.delivTime}}
+                    .card__face__stats.card__face__stats--req
+                      | Vehicle
+                      p {{card.requests}}
+                    .card__face__stats.card__face__stats--pledge
+                      | Date
+                      p {{card.pledge}}
+                    .card__face__stats.card__face__stats--weight
+                      | Seats
+                      p   {{card.weight}}
+                .card__part__side.m--front
+                  .card__sender
+                    h4.card__sender__heading Sender
+                    .card__sender__img-cont
+                      .card__sender__img-cont__inner
+                        img.card__sender__img(ng-src='{{card.senderImg}}')
+                    .card__sender__name-and-rating
+                      p.card__sender__name {{card.sender}}
+                      p.card__sender__rating(class='card__sender__rating-{{card.rating}}')
+                        //
+                          <span class="card__sender__rating__star">&#9733;</span>
+                          <span class="card__sender__rating__star">&#9733;</span>
+                          <span class="card__sender__rating__star">&#9733;</span>
+                          <span class="card__sender__rating__star">&#9733;</span>
+                          <span class="card__sender__rating__star">&#9733;</span>
+                          <span class="card__sender__rating__count">({{card.ratingCount}})</span>
+                      p.card__sender__address
+                        | {{card.fromStreet}}, {{card.fromCity}}
+                    .card__receiver
+                      .card__receiver__inner
+                        .card__sender__img-cont
+                          .card__sender__img-cont__inner
+                            img.card__sender__img(ng-src='{{card.senderImg}}')
+                        .card__sender__name-and-rating
+                          p.card__sender__name {{card.sender}}
+                          p.card__sender__address
+                            | {{card.toStreet}}, {{card.toCity}}
+                    .card__path-big
+                  .card__from-to
+                    .card__from-to__inner
+                      .card__text.card__text--left
+                        p.card__text__heading From
+                        p.card__text__middle {{card.fromStreet}}
+                        p.card__text__bottom {{card.fromCity}}
+                      .card__text.card__text--right
+                        p.card__text__heading To
+                        p.card__text__middle {{card.toStreet}}
+                        p.card__text__bottom {{card.toCity}}
+                  section.card__part.card__part-3
+                    .card__part__side.m--back
+                    .card__part__side.m--front
+                      .card__timings
+                        .card__timings__inner
+                          .card__text.card__text--left
+                            p.card__text__heading Departure Time
+                            p.card__text__middle {{card.delivTime}}
+                          .card__text.card__text--right
+                            p.card__text__heading Request Deadline
+                            p.card__text__middle {{card.reqDl}}
+                      .card__timer 60 min 00 sec
+                      section.card__part.card__part-4
+                        .card__part__side.m--back
+                        .card__part__side.m--front
+                          button.card__request-btn(type='button')
+                            span.card__request-btn__text-1 Request
+                            span.card__request-btn__text-2 Start
+                          p.card__counter {{card.requests}} people have sent a request
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.min.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys')
+    script.
+      'use strict';
+      $(document).ready(function() {
+      var animating = false;
+      var step1 = 500;
+      var step2 = 500;
+      var step3 = 500;
+      var reqStep1 = 600;
+      var reqStep2 = 800;
+      var reqClosingStep1 = 500;
+      var reqClosingStep2 = 500;
+      var $scrollCont = $(".phone__scroll-cont");
+      function initMap($card) {
+      // my first experience with google maps api, so I have no idea what I'm doing
+      var latLngFrom = {
+      lat: 15.3647,
+      lng: 75.1240
+      };
+      var latLngTo = {
+      lat: 15.8497,
+      lng: 74.4977
+      };
+      var latLngCenter = {
+      lat: (latLngFrom.lat + latLngTo.lat) / 2,
+      lng: (latLngFrom.lng + latLngTo.lng) / 2
+      };
+      var themeColor = $card.data("color");
+      var map = new google.maps.Map($(".card__map__inner", $card)[0], {
+      zoom: 12,
+      center: latLngCenter,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
+      });
+      map.set('styles', [{
+      "featureType": "landscape",
+      "elementType": "geometry",
+      "stylers": [{
+      "hue": "#00ffdd"
+      }, {
+      "gamma": 1
+      }, {
+      "lightness": 100
+      }]
+      }, {
+      "featureType": "road",
+      "stylers": [{
+      "lightness": 60
+      }, {
+      "hue": "#006eff"
+      }]
+      }]);
+      var pinImage = new google.maps.MarkerImage(
+      // "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + themeColor.slice(1),
+      new google.maps.Size(21, 34),
+      new google.maps.Point(0, 0),
+      new google.maps.Point(10, 34)
+      );
+      var marker = new google.maps.Marker({
+      position: latLngFrom,
+      map: map,
+      title: 'From',
+      icon: pinImage
+      });
+      var marker = new google.maps.Marker({
+      position: latLngTo,
+      map: map,
+      title: 'To',
+      icon: pinImage
+      });
+      var polylineOpts = new google.maps.Polyline({
+      strokeColor: themeColor,
+      strokeWeight: 3
+      });
+      var rendererOptions = {
+      map: map,
+      polylineOptions: polylineOpts,
+      suppressMarkers: true
+      };
+      var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+      var request = {
+      origin: latLngFrom,
+      destination: latLngTo,
+      travelMode: google.maps.DirectionsTravelMode.DRIVING
+      };
+      var directionsService = new google.maps.DirectionsService();
+      directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      } else {
+      console.log("wtf")
+      }
+      });
+      };
+      initMap($(".card"));
+      $(document).on("click", ".card:not(.active)", function() {
+      if (animating) return;
+      animating = true;
+      var $card = $(this);
+      var cardTop = $card.position().top;
+      var scrollTopVal = cardTop - 30;
+      $card.addClass("flip-step1 active");
+      $scrollCont.animate({
+      scrollTop: scrollTopVal
+      }, step1);
+      setTimeout(function() {
+      $scrollCont.animate({
+      scrollTop: scrollTopVal
+      }, step2);
+      $card.addClass("flip-step2");
+      setTimeout(function() {
+      $scrollCont.animate({
+      scrollTop: scrollTopVal
+      }, step3);
+      $card.addClass("flip-step3");
+      setTimeout(function() {
+      animating = false;
+      }, step3);
+      }, step2 * 0.5);
+      }, step1 * 0.65);
+      });
+      $(document).on("click", ".card:not(.req-active1) .card__header__close-btn", function() {
+      if (animating) return;
+      animating = true;
+      var $card = $(this).parents(".card");
+      $card.removeClass("flip-step3 active");
+      setTimeout(function() {
+      $card.removeClass("flip-step2");
+      setTimeout(function() {
+      $card.removeClass("flip-step1");
+      setTimeout(function() {
+      animating = false;
+      }, step1);
+      }, step2 * 0.65);
+      }, step3 / 2);
+      });
+      $(document).on("click", ".card:not(.req-active1) .card__request-btn", function(e) {
+      if (animating) return;
+      animating = true;
+      var $card = $(this).parents(".card");
+      var cardTop = $card.position().top;
+      var scrollTopVal = cardTop - 30;
+      $card.addClass("req-active1 map-active");
+      initMap($card);
+      setTimeout(function() {
+      $card.addClass("req-active2");
+      $scrollCont.animate({
+      scrollTop: scrollTopVal
+      }, reqStep2);
+      setTimeout(function() {
+      animating = false;
+      }, reqStep2);
+      }, reqStep1);
+      });
+      $(document).on("click",
+      ".card.req-active1 .card__header__close-btn, .card.req-active1 .card__request-btn",
+      function() {
+      if (animating) return;
+      animating = true;
+      var $card = $(this).parents(".card");
+      $card.addClass("req-closing1");
+      setTimeout(function() {
+      $card.addClass("req-closing2");
+      setTimeout(function() {
+      $card.addClass("no-transition hidden-hack")
+      $card.css("top");
+      $card.removeClass("req-closing2 req-closing1 req-active2 req-active1 map-active flip-step3 flip-step2 flip-step1 active");
+      $card.css("top");
+      $card.removeClass("no-transition hidden-hack");
+      animating = false;
+      }, reqClosingStep2);
+      }, reqClosingStep1);
+      });
+      });
+      // angular used only for templating, I was too tired to find more lightweight solution
+      var delivcardDefaultData = [{
+      id: '121',
+      price: 500,
+      requests: j,
+      pledge: i,
+      weight: k,
+      sender: 'Amit Hannikeri',
+      senderImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg',
+      themeColor: 'purple',
+      themeColorHex: '#BA68C8',
+      bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg',
+      fromStreet: g,
+      toStreet: h,
+      delivTime: '06:30 pm',
+      delivDateNoun: 'Today',
+      reqDl: '2 Days'
+      }, {
+      id: '125',
+      price: 700,
+      requests: 'Bike',
+      pledge: '2019-03-03',
+      weight: '1',
+      sender: 'Tanvish Minache',
+      senderImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg',
+      themeColor: 'green',
+      themeColorHex: '#52A43A',
+      bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-2.jpg',
+      fromStreet: 'Bangalore, Karnataka',
+      toStreet: 'Mumbai, Maharastra',
+      delivTime: '07:30 am',
+      delivDateNoun: 'Today',
+      reqDl: '1 Day'
+      }, {
+      id: '320',
+      price: 1500,
+      requests: 'Car',
+      pledge: '2019-02-25',
+      weight: '5',
+      sender: 'Rahul Mahendrekar',
+      senderImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg',
+      themeColor: 'orange',
+      themeColorHex: '#BA68C8',
+      bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg',
+      fromStreet: 'Punjab',
+      toStreet: 'Bangalore',
+      delivTime: '05:30 am',
+      delivDateNoun: 'Today',
+      reqDl: '5 Days'
+      }, {
+      id: '220',
+      price: 2000,
+      requests: 'Bike',
+      pledge: '2019-03-30',
+      weight: '1',
+      sender: 'Vaibhav Kulkarni',
+      senderImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg',
+      themeColor: 'red',
+      themeColorHex: '#BA68C8',
+      bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg',
+      fromStreet: 'Belgaum, Karnataka',
+      toStreet: 'Ladhak',
+      delivTime: '05:00 am',
+      delivDateNoun: 'Today',
+      reqDl: '3 Days'
+      }];
+      var app = angular.module("delivcard", []);
+      app.controller("DelivCtrl", ['$scope', function($scope) {
+      $scope.cards = delivcardDefaultData;
+      }]);

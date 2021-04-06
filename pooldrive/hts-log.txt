@@ -1,0 +1,18 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 27 Feb 2019 16:38:51 at https://demo.opencart.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://demo.opencart.com/ -O1 "D:\redeem" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:51:28	Warning: 	File not parsed, looks like binary: https://demo.opencart.com/catalog/view/javascript/bootstrap/fonts/glyphicons-halflings-regular.woff2
+16:51:28	Warning: 	File not parsed, looks like binary: https://demo.opencart.com/catalog/view/javascript/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0
+16:53:18	Error: 	Exit requested by shell or user
+16:53:18	Warning: 	File not added due to mirror cancel: https://demo.opencart.com/index.php?route=product/product&path=20&product_id=33&sort=p.price&order=ASC
+16:53:19	Warning: 	Retry after error 500 (Internal Server Error) at link https://demo.opencart.com/index.php?route=common/cart/info%20ul%20li (from https://demo.opencart.com/index.php?route=product/product&path=57&product_id=49)
+16:53:20	Warning: 	File not added due to mirror cancel: https://demo.opencart.com/index.php?route=common/cart/info%20ul%20li
+16:53:20	Error: 	"mirror stopped by user" (-1) at link https://demo.opencart.com/index.php?route=common/cart/info%20ul%20li (from https://demo.opencart.com/index.php?route=product/product&path=57&product_id=49)
+
+HTTrack Website Copier/3.49-2 mirror complete in 14 minutes 29 seconds : 421 links scanned, 418 files written (10242025 bytes overall) [3859087 bytes received at 4440 bytes/sec], 8716809 bytes transferred using HTTP compression in 325 files, ratio 22%, 64.6 requests per connection
+(2 errors, 5 warnings, 0 messages)

@@ -1,0 +1,117 @@
+
+doctype html
+html(lang='en')
+  head
+    script(defer='', src='site.js')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Profile
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    // Minified JQuery
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Materialize Compiled and minified CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    // Google Material Icons
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Righteous', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    link(rel='stylesheet', href='css/profile.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    script.
+      $(document).ready(function() {
+      $('.sidenav').sidenav();
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems, {
+      direction: 'top',
+      hoverEnabled: false
+      });
+      });
+  body
+    // NavBar
+    nav(style='background-color: #051c2d;')
+      .nav-wrapper
+        a.brand-logo(href='#', style="font-family: 'Varela Round', sans-serif;") EcoDrive
+        a.sidenav-trigger(href='#', data-target='mobile-nav')
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
+          li
+            a(href='profile.html') Profile
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+        ul#mobile-nav.sidenav(style='width: 300px;')
+          img.responsive-img(src='images/nobody_m.original.jpg', style='height: 17em; width: 300px;')
+          li
+            a(style="font-size: 1.5em; font-family: 'Righteous', cursive;") Tanvish Minache
+          hr
+          li
+            a(href='activity.html') Activity
+          li
+            a(href='/community') Community
+          li
+            a(href='demo.opencart.com/redeem.html') Redeem Points
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+    #container.container(style='position: relative; width: 385px;')
+      // <div class='card-wrapper'>
+      #main-window.main-window
+        .user-image
+          .add-button
+            i.material-icons person_pin
+          .username Welcome! Earth saver
+        .user-info
+          .quote
+            | "Where there is nature, there is life"
+            br
+            | Loves reading, Painting and Yoga
+        .social-info
+          .social-info-elm
+            | Club Name
+            br
+            span.lg Potters
+          .social-info-elm
+            | Club Rank
+            br
+            span.lg
+              | 4
+              sup th
+          .social-info-elm
+            | Badges Earned
+            br
+            span.lg 5
+        br
+        br
+      br
+      br
+    br
+    br
+    .fixed-action-btn
+      a.btn-floating.btn-large.red
+        i.material-icons add
+      ul
+        li
+          a.btn-floating.red(href='daily_monthly.html')
+            i.material-icons book
+          |  Monthly Report
+        li
+          a.btn-floating.yellow.darken-1(href='daily_weekly.html')
+            i.material-icons chrome_reader_mode
+          | Report
+        li
+          a.btn-floating.blue(href='add_vehicle.html')
+            i.material-icons directions_car
+          | Add Vehicle
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    script(src='js/profile.js')
+    // Responsive Circle Image
+    // <img class="responsive-img circle" src="http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg ">

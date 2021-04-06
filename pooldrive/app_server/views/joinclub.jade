@@ -1,0 +1,178 @@
+doctype html
+html(dir='ltr', lang='en')
+  head
+    meta(http-equiv='content-type', content='text/html;charset=utf-8')
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Overpass', rel='stylesheet')
+    meta(charset='UTF-8')
+    // To add image on title bar
+    link(rel='shortcut icon', href='../../images/eco.ico')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Your Groups!
+    base
+    meta(name='description', content='My Store')
+    script(src='catalog/view/javascript/jquery/jquery-2.1.1.min.js', type='text/javascript')
+    link(href='catalog/view/javascript/bootstrap/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    script(src='catalog/view/javascript/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    link(href='catalog/view/javascript/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='catalog/view/theme/default/stylesheet/stylesheet.css', rel='stylesheet')
+    link(href='catalog/view/javascript/jquery/swiper/css/swiper.min.css', type='text/css', rel='stylesheet', media='screen')
+    link(href='catalog/view/javascript/jquery/swiper/css/opencart.css', type='text/css', rel='stylesheet', media='screen')
+    script(src='catalog/view/javascript/jquery/swiper/js/swiper.jquery.js', type='text/javascript')
+    script(src='catalog/view/javascript/common.js', type='text/javascript')
+    link(href='image/catalog/cart.png', rel='icon')
+    style(media='screen').
+      body {
+      font-family: 'Roboto', sans-serif;
+      width: auto;
+      height: auto;
+      background-color: whitesmoke;
+      margin: 0;
+      font-weight: 900;
+      }
+      .topp {
+      padding-top: 10%;
+      padding-bottom: 5%
+      }
+      h3 {
+      text-align: center;
+      }
+      .topp {
+      /*background-image: url(image\a-group-of-people-powerpoint-backgrounds.jpg');*/
+      background-color: #FFFFFF;
+      }
+      .head {
+      padding-left: 40%;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+      }
+      #wrapper {
+      position: relative;
+      }
+      #over_map {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      z-index: 99;
+      height: 10px;
+      }
+      body {
+      /*background-color: whitesmoke;*/
+      background-image: url("image/community.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      }
+  body
+    nav
+      .container
+        .row
+          .col-sm-4
+            #logo(style="padding-left: 120px; font-family: 'Roboto', sans-serif; color: #051c2d")
+              h1
+                a(style="color: #051c2d; font-family: 'Varela Round', sans-serif;") EcoDrive
+          .col-sm-5
+            #search.input-group
+              input.form-control.input-lg(type='text', name='search', value='', placeholder='Search')
+              span.input-group-btn
+                button.btn.btn-default.btn-lg(type='button')
+                  i.fa.fa-search
+      script(type='text/javascript').
+        $('#slideshow0').swiper({
+        mode: 'horizontal',
+        slidesPerView: 1,
+        pagination: '.slideshow0',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: true,
+        loop: true
+        });
+      .row
+        .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+          #wrapper.product-thumb.transition
+            .topp(style='opacity: 0.9')
+              ul(style="color: #051c2d; font-family: 'Overpass', sans-serif;")
+                h2 Group Name:
+                h3 Pen-Pals
+                h2 Motto:
+                h3  Drops and drops come together to make an ocean!
+                h2 Created On:
+                h3  2018-3-24
+            .button-group
+              button(type='button', style='width: 35.1em; background-color: #ffc107; color: #051c2d;', onclick='myfunc()') Join
+              script(type='text/javascript').
+                function myfunc() {
+                alert("You have sucessfully joined the group");
+                }
+      .row
+        .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+          #wrapper.product-thumb.transition
+            .topp(style='opacity: 0.9')
+              ul(style="color: #051c2d; font-family: 'Overpass', sans-serif;")
+                h2 Group Name:
+                h3  Fitness-Freaks
+                h2 Motto:
+                h3  Set of three is always the best
+                h2 Created On:
+                h3  2018-3-24
+            .button-group
+              button(type='button', name='button', style='width: 35.1em; background-color: #ffc107; color: #051c2d;', onclick='myfunction()') Join
+              script(type='text/javascript').
+                function myfunction() {
+                alert("you have sucessfully joined the group");
+                }
+      .row
+        .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+          .product-thumb.transition
+            .topp(style='opacity: 0.9')
+              ul(style="color: #051c2d; font-family: 'Overpass', sans-serif;")
+                h2 Group Name:
+                h3  bro's for life
+                h2 Motto:
+                h3  bro code for life
+                h2 Created On:
+                h3  2018-3-24
+            .button-group
+              button(type='button', name='button', style='width: 35.1em; background-color: #ffc107; color: #051c2d;', onclick='al()')  Join
+              script(type='text/javascript').
+                function al() {
+                alert("You have sucessfully enterwed the group!!");
+                }
+      .row
+        .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+          .product-thumb.transition
+            .topp(style='opacity: 0.9')
+              ul(style="color: #051c2d; font-family: 'Overpass', sans-serif;")
+                h2 Group Name:
+                h3  The Three Amigos
+                h2 Motto:
+                h3  Set of three is always the best
+                h2 Created On:
+                h3  2018-3-24
+            .button-group
+              button(type='button', name='button', style='width: 35.1em; background-color: #ffc107; color: #051c2d;', onclick='al()') Join
+              script(type='text/javascript').
+                function al() {
+                alert("You have sucessfully joined the group");
+                }
+      .row
+        .product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12
+          .product-thumb.transition
+            .topp(style='opacity: 0.9')
+              ul(style="color: #051c2d; font-family: 'Overpass', sans-serif;")
+                h2 Group Name:
+                h3 Potters
+                h2 Motto:
+                h3  Honesty is the best policy
+                h2 Created On:
+                h3  2018-3-24
+            .button-group
+              button(type='button', name='button', style='width: 35.1em; background-color: #ffc107; color: #051c2d;', onclick='al()') Join
+              script(type='text/javascript').
+                function al() {
+                alert("You have sucessfully entered the group!");
+                }

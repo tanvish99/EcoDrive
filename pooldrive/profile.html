@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script defer src="site.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <!-- Minified JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: 'top',
+                hoverEnabled: false
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav style="background-color: #051c2d;">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="font-family: 'Varela Round', sans-serif;">EcoDrive</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-nav" style="width: 300px;">
+                <img src="images/nobody_m.original.jpg" class="responsive-img" style="height: 17em; width: 300px;">
+                <li><a style="font-size: 1.5em; font-family: 'Righteous', cursive;">Welcome! Earth Saviour</a></li>
+                <hr>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="demo.opencart.com/redeem.html">Redeem Points</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class='container' id='container' style="position: relative; width: 385px;">
+        <!-- <div class='card-wrapper'> -->
+
+        <div class='main-window' id='main-window'>
+            <div class='user-image'>
+                <div class='add-button'><i class="material-icons">person_pin</i></div>
+
+                <div class='username'></div>
+            </div>
+            <div class='user-info'>
+                <div class='quote'>"Where there is nature, there is life"<br>Loves reading, Painting and Yoga</div>
+            </div>
+            <div class='social-info'>
+                <div class='social-info-elm'>Club Name
+                    <br><span class='lg'>Potters</span></div>
+                <div class='social-info-elm'>Club Rank
+                    <br><span class='lg'>4<sup>th</span></div>
+                <div class='social-info-elm'>Badges Earned
+                    <br><span class='lg'>5</span></div>
+            </div><br><br>
+        </div><br><br>
+    </div>
+    <br><br>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red"><i class="material-icons">add</i></a>
+        <ul>
+            <li><a class="btn-floating red" href="daily_monthly.html"><i class="material-icons">book</i></a> Monthly Report</li>
+            <li><a class="btn-floating yellow darken-1" href="daily_weekly.html"><i class="material-icons">chrome_reader_mode</i></a>Report</li>
+            <li><a class="btn-floating blue" href="add_vehicle.html"><i class="material-icons">directions_car</i></a>Add Vehicle</li>
+        </ul>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>
+
+<!-- Responsive Circle Image -->
+<!-- <img class="responsive-img circle" src="http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg "> -->

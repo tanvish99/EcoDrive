@@ -1,0 +1,94 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    script(defer='', src='site.js')
+    link(rel='manifest', href='manifest.json')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', media='screen', href='css/main.css')
+    script(src='js/main.js')
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    // Google Material Icons
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    title Create Event
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys&v=3.exp&sensor=false&libraries=places')
+    script.
+      $(document).ready(function() {
+      $('input#input_text, textarea#textarea2').characterCounter();
+      });
+      $(document).ready(function() {
+      $('select').formSelect();
+      });
+      function testJS() {
+      var b = document.getElementById("from").value;
+      var c = document.getElementById("location").value;
+      var d = document.getElementById("date").value;
+      var e = document.getElementById("Vehicle").value;
+      var f = document.getElementById("seat").value;
+      url = 'D:/plantrip/display.html?from=' + encodeURIComponent(b) + '&location=' + encodeURIComponent(c) + '&date=' + encodeURIComponent(d) + '&Vehicle=' + encodeURIComponent(e) + '&seat=' + encodeURIComponent(f);
+      document.location.href = url;
+      }
+    style.
+      label {
+      font-size: 1.1em;
+      color: #000000;
+      }
+  body
+    .container
+      p(style="text-align: center; font-weight: 600; color: #051c2d; text-align: center; font-size: 3.5em; font-family: 'Varela Round', sans-serif;") Event Details
+      p(style="font-size: 2em; text-align: center; font-weight: 500; color: #051c2d; font-family: 'Varela Round', sans-serif;") "Plan & Travel"
+    .container
+      .row
+        form.col.s12(action='display.html', method='get')
+          .row
+            label(for='icon_prefix') Start Location
+            .input-field.col.s12
+              i.material-icons.prefix my_location
+              input#from.validate(name='from', type='text')
+          .row
+            label(for='icon_telephone') Destination
+            .input-field.col.s12
+              i.material-icons.prefix room
+              input#location.validate(name='location', type='text')
+          .row
+            label(for='icon_telephone') Date
+            .input-field.col.s12
+              i.material-icons.prefix date_range
+              input#date.validate(name='date', type='date')
+          .row
+            label Vehicle
+            select#Vehicle.browser-default(name='Vehicle')
+              option(disabled='', selected='') Choose your Vehicle
+              option(value='Bike') Bike
+              option(value='Car') Car
+          .row
+            label(for='icon_telephone') Number of Seats
+            .input-field.col.s12
+              i.material-icons.prefix event_seat
+              input#seat.validate(name='seat', type='number')
+    br
+    .container
+      button.btn.waves-effect.waves-light(type='submit', name='action', style='background-color: #FDB813; border-radius: 15px; font-size: 15px; color:#000000;')
+        | Submit
+        i.material-icons.right send
+    br
+    br
+    script.
+      function init() {
+      var input = document.getElementById('location');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      var input1 = document.getElementById('from');
+      var autocomplete1 = new google.maps.places.Autocomplete(input1);
+      }
+      google.maps.event.addDomListener(window, 'load', init);
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // key=AIzaSyCLa9iUQf41ANzURC7i9_pyWa5dAphrirs

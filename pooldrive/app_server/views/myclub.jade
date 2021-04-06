@@ -1,0 +1,84 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    script(defer='', src='site.js')
+    link(rel='manifest', href='manifest.json')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', media='screen', href='css/main.css')
+    script(src='js/main.js')
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    // Google Material Icons
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Righteous', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    title My Club
+    script.
+      $(document).ready(function() {
+      $('.sidenav').sidenav();
+      });
+  body
+    // NavBar
+    nav(style='background-color: #051c2d;')
+      .nav-wrapper
+        a.brand-logo(href='#', style="font-family: 'Varela Round', sans-serif;") EcoDrive
+        a.sidenav-trigger(href='#', data-target='mobile-nav')
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
+          li
+            a(href='profile.html') Profile
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+        ul#mobile-nav.sidenav(style='width: 300px;')
+          img.responsive-img(src='images/photo-1529665253569-6d01c0eaf7b6.jpeg', style='height: 17em; width: 300px;')
+          li
+            a(style="font-size: 1.5em; font-family: 'Righteous', cursive;") Welcome! Earth saver
+          hr
+          li
+            a(href='profile.html') Profile
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+    div
+      p(style="text-align: center; font-size: 3.5em; font-weight: 1000; color:#ffc107; font-family: 'Pacifico', cursive;") Create your Club
+    div
+      img.responsive-img.circle(src='images/community.png', alt='Snow', style='width:auto; height: 400px; opacity: 0.8')
+      div
+        .form-group(style='text-align: center;')
+          form(action='createGrp/creategroup.html', style='text-align: center;')
+            button.btn.btn-success(type='submit', style='background-color: #ffc107; color:#051c2d; font-size: 17px; border-radius: 15px; font-weight: bold; display: inline-block; padding: 5px 5px 45px 5px; width: 11em;')
+              i.material-icons group_add
+              |  Create Club
+          br
+          form(action='joinGrp/demo.opencart.com/joinClub.html', style='text-align: center;')
+            button.btn.btn-success(type='submit', style='background-color: #ffc107; color:#051c2d; font-size: 17px; border-radius: 15px; font-weight: bold; display: inline-block; padding: 5px 5px 45px 5px; width: 11em;')
+              i.material-icons group
+              |  Join Club
+    br
+    br
+    br
+    br
+    // Bottom Navigation
+    nav.nav-center(role='navigation', style='background-color: #051c2d; position: static; position: fixed; bottom: 0;')
+      .nav-wrapper.container
+        ul
+          li
+            a(href='https://afternoon-forest-99690.herokuapp.com/dashboard') Pool Drive
+          li
+            a(href='activity.html') Activity
+          li
+            a(href='/community') Community
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')

@@ -1,0 +1,100 @@
+<!Doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <script defer src="site.js"></script>
+    <link rel="manifest" href="manifest.json" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="js/main.js"></script>
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <!-- Minified JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <style>
+
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+    </script>
+    <title>Plan Trip</title>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav style="background-color: #051c2d;">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="font-family: 'Varela Round', sans-serif;">EcoDrive</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-nav" style="width: 300px;">
+                <img src="images/nobody_m.original.jpg" class="responsive-img" style="height: 17em; width: 300px;">
+                <li><a style="font-size: 1.5em; font-family: 'Righteous', cursive;">Welcome! Earth saviour</a></li>
+                <hr>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <div>
+            <p style="text-align: center; font-size: 3.5em; font-weight: 1000; color:#ffc107; font-family: 'Pacifico', cursive;">Plan your Trip</p>
+        </div>
+        <div style="width:100%;height:0;padding-bottom:70%;position:relative;"><iframe src="https://giphy.com/embed/2rpDGeo2ymlXO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <div class="form-group" style="text-align: center;">
+                <form action='create.html' style="text-align: center;">
+                    <button type="submit" class="btn btn-success" style="background-color: #ffc107; color:#000000; font-size: 17px; border-radius: 15px; font-weight: bold; width: 15em; display: inline-block; padding: 5px 5px 45px 5px;"><i class="material-icons">event</i> Create an Event</button>
+                </form>
+                &nbsp;
+                <form action='/join' style="text-align: center;">
+                    <button type="submit" class="btn btn-success" style="background-color: #ffc107; color:#000000; font-size: 17px; border-radius: 15px; font-weight: bold; width: 15em; display: inline-block; padding: 5px 5px 45px 5px;"><i class="material-icons">event_note</i> View Created Events</button>
+                </form>
+            </div>
+        </div>
+
+        <br><br><br><br>
+        <!-- Bottom Navigation -->
+        <nav class="nav-center" role="navigation" style="background-color: #051c2d; position: static; position: fixed; bottom: 0;">
+            <div class="nav-wrapper container">
+                <ul>
+                    <li><a href="/dashboard">Pool Drive</a></li>
+                    <li><a href="activity.html">Activity</a></li>
+                    <li><a href="/community">Community</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

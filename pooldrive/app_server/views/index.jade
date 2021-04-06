@@ -1,0 +1,328 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title Majestic Admin
+    // plugins:css
+    link(rel='stylesheet', href='vendors/mdi/css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='vendors/base/vendor.bundle.base.css')
+    // endinject
+    // plugin css for this page
+    link(rel='stylesheet', href='vendors/datatables.net-bs4/dataTables.bootstrap4.css')
+    // End plugin css for this page
+    // inject:css
+    link(rel='stylesheet', href='css/style.css')
+    // endinject
+    link(rel='shortcut icon', href='images/favicon.png')
+  body
+    .container-scroller
+      // partial:partials/_navbar.html
+      nav.navbar.col-lg-12.col-12.p-0.fixed-top.d-flex.flex-row
+        .navbar-brand-wrapper.d-flex.justify-content-center
+          .navbar-brand-inner-wrapper.d-flex.justify-content-between.align-items-center.w-100
+            a.navbar-brand.brand-logo(href='index.html')
+              img(src='images/logo.svg', alt='logo')
+            a.navbar-brand.brand-logo-mini(href='index.html')
+              img(src='images/logo-mini.svg', alt='logo')
+            button.navbar-toggler.navbar-toggler.align-self-center(type='button', data-toggle='minimize')
+              span.mdi.mdi-sort-variant
+        .navbar-menu-wrapper.d-flex.align-items-center.justify-content-end
+          ul.navbar-nav.mr-lg-4.w-100
+            li.nav-item.nav-search.d-none.d-lg-block.w-100
+              .input-group
+                .input-group-prepend
+                  span#search.input-group-text
+                    i.mdi.mdi-magnify
+                input.form-control(type='text', placeholder='Search now', aria-label='search', aria-describedby='search')
+          ul.navbar-nav.navbar-nav-right
+            li.nav-item.dropdown.mr-1
+              a#messageDropdown.nav-link.count-indicator.dropdown-toggle.d-flex.justify-content-center.align-items-center(href='#', data-toggle='dropdown')
+                i.mdi.mdi-message-text.mx-0
+                span.count
+              .dropdown-menu.dropdown-menu-right.navbar-dropdown(aria-labelledby='messageDropdown')
+                p.mb-0.font-weight-normal.float-left.dropdown-header Messages
+                a.dropdown-item
+                  .item-thumbnail
+                    img.profile-pic(src='images/faces/face4.jpg', alt='image')
+                  .item-content.flex-grow
+                    h6.ellipsis.font-weight-normal
+                      | David Grey
+                    p.font-weight-light.small-text.text-muted.mb-0
+                      | The meeting is cancelled
+                a.dropdown-item
+                  .item-thumbnail
+                    img.profile-pic(src='images/faces/face2.jpg', alt='image')
+                  .item-content.flex-grow
+                    h6.ellipsis.font-weight-normal
+                      | Tim Cook
+                    p.font-weight-light.small-text.text-muted.mb-0
+                      | New product launch
+                a.dropdown-item
+                  .item-thumbnail
+                    img.profile-pic(src='images/faces/face3.jpg', alt='image')
+                  .item-content.flex-grow
+                    h6.ellipsis.font-weight-normal
+                      | Johnson
+                    p.font-weight-light.small-text.text-muted.mb-0
+                      | Upcoming board meeting
+            li.nav-item.dropdown.mr-4
+              a#notificationDropdown.nav-link.count-indicator.dropdown-toggle.d-flex.align-items-center.justify-content-center.notification-dropdown(href='#', data-toggle='dropdown')
+                i.mdi.mdi-bell.mx-0
+                span.count
+              .dropdown-menu.dropdown-menu-right.navbar-dropdown(aria-labelledby='notificationDropdown')
+                p.mb-0.font-weight-normal.float-left.dropdown-header Notifications
+                a.dropdown-item
+                  .item-thumbnail
+                    .item-icon.bg-success
+                      i.mdi.mdi-information.mx-0
+                  .item-content
+                    h6.font-weight-normal Application Error
+                    p.font-weight-light.small-text.mb-0.text-muted
+                      | Just now
+                a.dropdown-item
+                  .item-thumbnail
+                    .item-icon.bg-warning
+                      i.mdi.mdi-settings.mx-0
+                  .item-content
+                    h6.font-weight-normal Settings
+                    p.font-weight-light.small-text.mb-0.text-muted
+                      | Private message
+                a.dropdown-item
+                  .item-thumbnail
+                    .item-icon.bg-info
+                      i.mdi.mdi-account-box.mx-0
+                  .item-content
+                    h6.font-weight-normal New user registration
+                    p.font-weight-light.small-text.mb-0.text-muted
+                      | 2 days ago
+            li.nav-item.nav-profile.dropdown
+              a#profileDropdown.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+                img(src='images/faces/face5.jpg', alt='profile')
+                span.nav-profile-name Louis Barnett
+              .dropdown-menu.dropdown-menu-right.navbar-dropdown(aria-labelledby='profileDropdown')
+                a.dropdown-item
+                  i.mdi.mdi-settings.text-primary
+                  |                 Settings
+                a.dropdown-item
+                  i.mdi.mdi-logout.text-primary
+                  |                 Logout
+          button.navbar-toggler.navbar-toggler-right.d-lg-none.align-self-center(type='button', data-toggle='offcanvas')
+            span.mdi.mdi-menu
+      // partial
+      .container-fluid.page-body-wrapper
+        // partial:partials/_sidebar.html
+        // partial
+        .main-panel
+          .content-wrapper
+            .row
+              .col-md-12.grid-margin
+                .d-flex.justify-content-between.flex-wrap
+                  .d-flex.align-items-end.flex-wrap
+                    .mr-md-3.mr-xl-5
+                      h2 Welcome back,
+                      p.mb-md-0 Your analytics dashboard template.
+                    .d-flex
+                      i.mdi.mdi-home.text-muted.hover-cursor
+                      p.text-muted.mb-0.hover-cursor  / Dashboard / 
+                      p.text-primary.mb-0.hover-cursor Analytics
+                  .d-flex.justify-content-between.align-items-end.flex-wrap
+                    button.btn.btn-light.bg-white.btn-icon.mr-3.d-none.d-md-block(type='button')
+                      i.mdi.mdi-download.text-muted
+                    button.btn.btn-light.bg-white.btn-icon.mr-3.mt-2.mt-xl-0(type='button')
+                      i.mdi.mdi-clock-outline.text-muted
+                    button.btn.btn-light.bg-white.btn-icon.mr-3.mt-2.mt-xl-0(type='button')
+                      i.mdi.mdi-plus.text-muted
+                    button.btn.btn-primary.mt-2.mt-xl-0 Generate report
+            .row
+              .col-md-12.grid-margin.stretch-card
+                .card
+                  .card-body.dashboard-tabs.p-0
+                    ul.nav.nav-tabs.px-4(role='tablist')
+                      li.nav-item
+                        a#overview-tab.nav-link.active(data-toggle='tab', href='#overview', role='tab', aria-controls='overview', aria-selected='true') Overview
+                      li.nav-item
+                        a#sales-tab.nav-link(data-toggle='tab', href='#sales', role='tab', aria-controls='sales', aria-selected='false') Sales
+                      li.nav-item
+                        a#purchases-tab.nav-link(data-toggle='tab', href='#purchases', role='tab', aria-controls='purchases', aria-selected='false') Purchases
+                    .tab-content.py-0.px-0
+                      #overview.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='overview-tab')
+                        .d-flex.flex-wrap.justify-content-xl-between
+                          .d-none.d-xl-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-calendar-heart.icon-lg.mr-3.text-primary
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Start date
+                              .dropdown
+                                a#dropdownMenuLinkA.btn.btn-secondary.dropdown-toggle.p-0.bg-transparent.border-0.text-dark.shadow-none.font-weight-medium(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                  h5.mb-0.d-inline-block 26 Jul 2018
+                                .dropdown-menu(aria-labelledby='dropdownMenuLinkA')
+                                  a.dropdown-item(href='#') 12 Aug 2018
+                                  a.dropdown-item(href='#') 22 Sep 2018
+                                  a.dropdown-item(href='#') 21 Oct 2018
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-currency-usd.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Revenue
+                              h5.mr-2.mb-0 $577545
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-eye.mr-3.icon-lg.text-success
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Total views
+                              h5.mr-2.mb-0 9833550
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-download.mr-3.icon-lg.text-warning
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Downloads
+                              h5.mr-2.mb-0 2233783
+                          .d-flex.py-3.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-flag.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Flagged
+                              h5.mr-2.mb-0 3497843
+                      #sales.tab-pane.fade(role='tabpanel', aria-labelledby='sales-tab')
+                        .d-flex.flex-wrap.justify-content-xl-between
+                          .d-none.d-xl-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-calendar-heart.icon-lg.mr-3.text-primary
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Start date
+                              .dropdown
+                                a#dropdownMenuLinkA.btn.btn-secondary.dropdown-toggle.p-0.bg-transparent.border-0.text-dark.shadow-none.font-weight-medium(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                  h5.mb-0.d-inline-block 26 Jul 2018
+                                .dropdown-menu(aria-labelledby='dropdownMenuLinkA')
+                                  a.dropdown-item(href='#') 12 Aug 2018
+                                  a.dropdown-item(href='#') 22 Sep 2018
+                                  a.dropdown-item(href='#') 21 Oct 2018
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-download.mr-3.icon-lg.text-warning
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Downloads
+                              h5.mr-2.mb-0 2233783
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-eye.mr-3.icon-lg.text-success
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Total views
+                              h5.mr-2.mb-0 9833550
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-currency-usd.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Revenue
+                              h5.mr-2.mb-0 $577545
+                          .d-flex.py-3.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-flag.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Flagged
+                              h5.mr-2.mb-0 3497843
+                      #purchases.tab-pane.fade(role='tabpanel', aria-labelledby='purchases-tab')
+                        .d-flex.flex-wrap.justify-content-xl-between
+                          .d-none.d-xl-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-calendar-heart.icon-lg.mr-3.text-primary
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Start date
+                              .dropdown
+                                a#dropdownMenuLinkA.btn.btn-secondary.dropdown-toggle.p-0.bg-transparent.border-0.text-dark.shadow-none.font-weight-medium(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                  h5.mb-0.d-inline-block 26 Jul 2018
+                                .dropdown-menu(aria-labelledby='dropdownMenuLinkA')
+                                  a.dropdown-item(href='#') 12 Aug 2018
+                                  a.dropdown-item(href='#') 22 Sep 2018
+                                  a.dropdown-item(href='#') 21 Oct 2018
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-currency-usd.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Revenue
+                              h5.mr-2.mb-0 $577545
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-eye.mr-3.icon-lg.text-success
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Total views
+                              h5.mr-2.mb-0 9833550
+                          .d-flex.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-download.mr-3.icon-lg.text-warning
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Downloads
+                              h5.mr-2.mb-0 2233783
+                          .d-flex.py-3.border-md-right.flex-grow-1.align-items-center.justify-content-center.p-3.item
+                            i.mdi.mdi-flag.mr-3.icon-lg.text-danger
+                            .d-flex.flex-column.justify-content-around
+                              small.mb-1.text-muted Flagged
+                              h5.mr-2.mb-0 3497843
+            .row
+              .col-md-7.grid-margin.stretch-card
+                .card
+                  .card-body
+                    p.card-title Cash deposits
+                    p.mb-4
+                      | To start a blog, think of a topic about and first brainstorm party is ways to write details
+                    #cash-deposits-chart-legend.d-flex.justify-content-center.pt-3
+                    canvas#cash-deposits-chart
+              .col-md-5.grid-margin.stretch-card
+                .card
+                  .card-body
+                    p.card-title Total sales
+                    h1 $ 28835
+                    h4 Gross sales over the years
+                    p.text-muted
+                      | Today, many people rely on computers to do homework, work, and create or store useful information. Therefore, it is important
+                    #total-sales-chart-legend
+                  canvas#total-sales-chart
+            .row
+              .col-md-12.stretch-card
+                .card
+                  .card-body
+                    p.card-title Recent Purchases
+                    .table-responsive
+                      table#recent-purchases-listing.table
+                        thead
+                          tr
+
+                            th Name
+                            th Status report
+                            th Office
+                            th Price
+                            th Date
+                            th Gross amount
+                        tbody
+                          tr
+                          each user in users
+                            td #{user.firstName}
+                            td Levelled up
+                            td Catalinaborough
+                            td $790
+                            td 06 Jan 2018
+                            td $2274253
+                            tr
+
+          // content-wrapper ends
+          // partial:partials/_footer.html
+          footer.footer
+            .d-sm-flex.justify-content-center.justify-content-sm-between
+              span.text-muted.text-center.text-sm-left.d-block.d-sm-inline-block
+                | Copyright © 2018
+                a(href='https://www.urbanui.com/', target='_blank') Urbanui
+                | . All rights reserved.
+              span.float-none.float-sm-right.d-block.mt-1.mt-sm-0.text-center
+                | Hand-crafted & made with
+                i.mdi.mdi-heart.text-danger
+          // partial
+          // main-panel ends
+          // page-body-wrapper ends
+          // container-scroller
+          // plugins:js
+          script(src='vendors/base/vendor.bundle.base.js')
+          // endinject
+          // Plugin js for this page
+          script(src='vendors/chart.js/Chart.min.js')
+          script(src='vendors/datatables.net/jquery.dataTables.js')
+          script(src='vendors/datatables.net-bs4/dataTables.bootstrap4.js')
+          // End plugin js for this page
+          // inject:js
+          script(src='js/off-canvas.js')
+          script(src='js/hoverable-collapse.js')
+          script(src='js/template.js')
+          // endinject
+          // Custom js for this page
+          script(src='js/dashboard.js')
+          script(src='js/data-table.js')
+          script(src='js/jquery.dataTables.js')
+          script(src='js/dataTables.bootstrap4.js')
+          // End custom js for this page

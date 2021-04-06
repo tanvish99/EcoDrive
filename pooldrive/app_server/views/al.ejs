@@ -1,0 +1,50 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+
+    <!--- basic page needs --->
+    <meta charset="utf-8">
+    <title>Eco Drive</title>
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <!-- preloader -->
+    <link rel="stylesheet" href="/public/css/themes/white/pace-theme-flash.css">
+    <script src="/public/js/pace.min.js"></script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/erkab.min.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link rel="manifest" href="../../manifest.json">
+    <!-- script -->
+    <script src="/public/js/modernizr.js"></script>
+
+    <!-- favicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="icon" type="image/png" href="/public/images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16"/>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+
+<form id="register-form" action="/alrt" method="post">
+    <label style="font-size:45px;">Do you want to accept the ride ?</label>    <br><br>
+    <button id="loginOrSignupBtn" class="btn btn-main uppercase" type="submit" value = "yes" name="vul" >Yes</button>
+    <br>
+    <button id="loginOrSignupBtn" class="btn btn-main uppercase" type="submit" value = "no" name="vul">No</button>
+</form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

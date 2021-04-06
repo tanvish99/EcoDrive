@@ -1,0 +1,164 @@
+doctype html
+html(lang='en')
+  head
+    script(defer='', src='site.js')
+    link(rel='manifest', href='manifest.json')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Daily-Monthly
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    link(href='https://fonts.googleapis.com/css?family=Fjalla+One', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    link(href='css/graph.css', rel='stylesheet')
+    style.
+      #card {
+      background: #fff;
+      max-width: 650px;
+      margin: 35px auto;
+      padding-top: 0px;
+      text-align: center;
+      }
+      h2 {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: rgb(192, 192, 192);
+      }
+      h1 {
+      font-size: 20px;
+      margin-top: 50;
+      color: #414141;
+      }
+      .footer {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      font-size: 14px;
+      text-align: center
+      }
+    style.
+      #chart1 {
+      max-width: 650px;
+      margin: 35px auto;
+      }
+  body(style='background-color: whitesmoke;')
+    h1(style="font-family: 'Fjalla One', sans-serif; text-align: center !important;") CO2 Emission on Monthly Basis
+    #chart1
+      apexchart(type='bar', height='350', :options='chartOptions', :series='series')
+    script(src='https://unpkg.com/vue/dist/vue.js')
+    script(src='https://cdn.jsdelivr.net/npm/apexcharts@latest')
+    script(src='https://cdn.jsdelivr.net/npm/vue-apexcharts')
+    script.
+      new Vue({
+      el: '#chart1',
+      components: {
+      apexchart: VueApexCharts,
+      },
+      data: {
+      series: [{
+      name: 'Carbon Emitted',
+      data: [0, 49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      }],
+      chartOptions: {
+      chart: {
+      height: 350,
+      type: 'bar',
+      },
+      plotOptions: {
+      bar: {
+      dataLabels: {
+      position: 'top', // top, center, bottom
+      },
+      }
+      },
+      dataLabels: {
+      enabled: true,
+      formatter: function(val) {
+      return val + "%";
+      },
+      offsetY: -20,
+      style: {
+      fontSize: '12px',
+      colors: ["#304758"]
+      }
+      },
+      xaxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      position: 'top',
+      labels: {
+      offsetY: -18,
+      },
+      axisBorder: {
+      show: false
+      },
+      axisTicks: {
+      show: false
+      },
+      crosshairs: {
+      fill: {
+      type: 'gradient',
+      gradient: {
+      colorFrom: '#D8E3F0',
+      colorTo: '#BED1E6',
+      stops: [0, 100],
+      opacityFrom: 0.4,
+      opacityTo: 0.5,
+      }
+      }
+      },
+      tooltip: {
+      enabled: true,
+      offsetY: -35,
+      }
+      },
+      fill: {
+      gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [50, 0, 100, 100]
+      },
+      },
+      yaxis: {
+      axisBorder: {
+      show: false
+      },
+      axisTicks: {
+      show: false,
+      },
+      labels: {
+      show: false,
+      formatter: function(val) {
+      return val + "%";
+      }
+      }
+      },
+      title: {
+      text: '',
+      floating: true,
+      offsetY: 320,
+      align: 'center',
+      style: {
+      color: '#444'
+      }
+      }
+      }
+      }
+      })
+      window.onload = function() {
+      //when the document is finished loading, replace everything
+      //between the <a ...> </a> tags with the value of splitText
+      document.getElementById("myLink").innerHTML = random;
+      document.getElementById("distance").innerHTML = erandom;
+      document.getElementById("duration").innerHTML = trandom;
+      }
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')

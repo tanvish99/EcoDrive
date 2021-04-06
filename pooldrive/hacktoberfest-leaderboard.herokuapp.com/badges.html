@@ -1,0 +1,254 @@
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="../unpkg.com/spectre.css%400.5.8/dist/spectre.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Badges</title>
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="../images/eco.ico" />
+    <!-- Minified JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+</head>
+
+<script>
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+    });
+</script>
+
+
+<style>
+    body {
+        width: auto;
+        height: auto;
+        background-color: whitesmoke;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    nav.nav-center ul {
+        text-align: center;
+    }
+    
+    nav.nav-center ul li {
+        display: inline;
+        float: none;
+    }
+    
+    nav.nav-center ul li a {
+        display: inline-block;
+    }
+</style>
+
+<body>
+
+    <!-- NavBar -->
+    <nav style="background-color: #051c2d;">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="font-family: 'Varela Round', sans-serif;">EcoDrive</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-nav" style="width: 300px;">
+                <img src="../images/photo-1529665253569-6d01c0eaf7b6.jpeg" class="responsive-img" style="height: 17em; width: 300px;">
+                <li><a style="font-size: 1.1em;">Welcome! Earth saver</a></li>
+                <hr>
+                <li><a href="../profile.html">Profile</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="badges.html">Badges</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="our_team.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content">
+        <!-- <h1>EcoDrive</h1> -->
+        <div class="subPart">
+            <h3 style="font-family: 'Montserrat', sans-serif; color:#051c2d;">Badges</h3>
+            <div class="container">
+                <div class="columns">
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Green Saviour</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/hacktoberfest.png" alt="hacktoberfest">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Minimal usage of vehicles for the month.<br>
+                                <b>50 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Treasurer</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/snake.png" alt="snake">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Maximum rewards gained in month.<br>
+                                <b>20 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Eco-friendly</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/leaderboard.png" alt="leaderboard">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Maximum number of car pooling exceeded.
+                                <br>
+                                <b>10 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Month Champion</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/10-contributions.png" alt="10-contributions">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Saved highest amount of carbon footprint.
+                                <br>
+                                <b>50 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Care Taker</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/adventure.png" alt="adventure">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Completed 14 weeks of challenge using public transport and car pooling.
+                                <br>
+                                <b>70 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Favourite Accompanist</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/novelist.png" alt="novelist">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Highest rating gained in travel.
+                                <br>
+                                <b>20 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">EcoGreen</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/taciturn.png" alt="taciturn">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Week challenge completed to save carbon footprint by 70% to 90%.
+                                <br>
+                                <b>100 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Zemerion</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/pirate.png" alt="pirate">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Max car pooling Least individual activity Less carbon footprint.
+                                <br>
+                                <b>20 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Daily Star</div>
+                            </div>
+                            <div class="card-image" style="text-align: center">
+                                <figure class="avatar avatar-xl">
+                                    <img src="img/badges/crap.png" alt="crap">
+                                </figure>
+                            </div>
+                            <div class="card-body">
+                                Maintained daily limit of carbon footprint for a month.
+                                <br>
+                                <b>20 Points</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="nav-center" role="navigation" style="background-color: #051c2d; position: static; bottom: 0;">
+            <div class="nav-wrapper container">
+                <ul>
+                    <li><a href="#" style="color: #ffffff;">Pool Drive</a></li>
+                    <li><a href="../activity.html" style="color: #ffffff;">Activity</a></li>
+                    <li><a href="/community" style="color: #ffffff;">Community</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script defer src="site.js"></script>
+
+    <link rel="manifest" href="manifest.json" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Vehicle</title>
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+
+        $(document).ready(function() {
+            $('.datepicker').datepicker();
+        });
+    </script>
+</head>
+
+<body style="background-color: whitesmoke;">
+    <div class="container">
+        <form id="wheels" action="profile.html" method="POST">
+
+            <p>Please specify if 4-wheelers are used by you</p>
+
+            No. of Cars used by you :
+            <!-- <label>Browser Select</label> -->
+            <select class="browser-default">
+   		<option value="" disabled selected>Choose your option</option>
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option>
+    	<option value="4">4</option>
+  		</select><br>
+
+            <!-- Your Car runs on the particular engine :<br> <input type="radio" id="engine" name="engine" value="petrol">Petrol
+    	<input type="radio" id="engine" name="engine" value="diesel">Diesel
+    	<input type="radio" id="engine" name="engine" value="cng">CNG
+  		<input type="radio" id="engine" name="engine" value="electric">Electric<br><br> -->
+
+            Your Car runs on the particular engine :
+            <form id="engine">
+                <p>
+                    <label>
+      	<input class="with-gap" name="group3" type="radio" checked />
+      	<span>Petrol</span>
+   		</label>
+                </p>
+                <p>
+                    <label>
+      	<input class="with-gap" name="group3" type="radio" checked />
+      	<span>Diesel</span>
+    	</label>
+                </p>
+                <p>
+                    <label>
+      	<input class="with-gap" name="group3" type="radio" checked />
+      	<span>CNG</span>
+    	</label>
+                </p>
+                <p>
+                    <label>
+      	<input class="with-gap" name="group3" type="radio" checked />
+      	<span>Electric</span>
+    	</label>
+                </p>
+            </form>
+
+            <!-- Enter the engine cc of your vehicle :<input type="number" name="cc" id="enginecc" required><br><br> -->
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="enginecc" type="number" class="validate">
+                            <label for="cc">Enter the engine cc :</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Your Car was bought back on : <input type="date" id="myDate" value="yyyy/mm/dd"><br><br>
+ -->
+            Your Car was bought back on : <input type="date" class="datepicker" value="yyyy">
+
+            <p>Please specify below if 2 wheelers are used by you : </p>
+
+            <!-- Do you own Gear Vehicle? :<input type="checkbox" id="gear" name="owngear" value="yes">Yes
+		<input type="checkbox" id="gear" name="nonengine" value="no">No<br><br> -->
+
+            Do you own Gear Vehicle? :
+            <form id="gear">
+                <p>
+                    <label>
+        <input type="checkbox" />
+        <span>Yes</span>
+      	</label>
+                </p>
+                <p>
+                    <label>
+        <input type="checkbox"  />
+        <span>No</span>
+      	</label>
+                </p>
+            </form>
+
+            <!-- Enter the engine cc of your vehicle :<input type="number" name="cc" id="twocc" required><br><br> -->
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="twocc" type="number" class="validate">
+                            <label for="cc">Enter the engine cc :</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Your Bike was bought back on : <input type="date" id="newDate" value="yyyy/mm/dd"> -->
+            Your Bike was bought back on : <input type="date" class="datepicker" value="yyyy"><br><br>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+            </button>
+            <br><br>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </div>
+</body>
+
+</html>

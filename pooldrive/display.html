@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script defer src="site.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="manifest" href="manifest.json" />
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <!--    <script language="javascript" type="text/javascript" src="asd.js"></script>-->
+    <script>
+        window.onload = function() {
+            var url = document.location.href,
+                params = url.split('?')[1].split('&'),
+                data = {},
+                tmp;
+            for (var i = 0, l = params.length; i < l; i++) {
+                tmp = params[i].split('=');
+                data[tmp[0]] = tmp[1];
+            }
+            var mystr = unescape(data.from)
+            var mystr1 = unescape(data.location)
+            var s = unescape(data.from).replace(/\+/g, ' ');
+            //var s1 = JSON.stringify(s);
+            var l = unescape(data.location).replace(/\+/g, ' ');
+            var d = unescape(data.date).replace(/\+/g, ' ');
+            var v = unescape(data.Vehicle).replace(/\+/g, ' ');
+            var se = unescape(data.seat).replace(/\+/g, ' ');
+            document.getElementById('start').innerHTML = mystr.replace(/\+/g, ' ');
+            document.getElementById('end').innerHTML = mystr1.replace(/\+/g, ' ');
+            document.getElementById('date').innerHTML = unescape(data.date).replace(/\+/g, ' ');
+            document.getElementById('vehicle').innerHTML = unescape(data.Vehicle).replace(/\+/g, ' ');
+            document.getElementById('seat').innerHTML = unescape(data.seat).replace(/\+/g, ' ');
+
+            if (typeof(Storage) !== "undefined") {
+                window.localStorage.setItem("start", s);
+                window.localStorage.setItem("dest", l);
+                window.localStorage.setItem("date", d);
+                window.localStorage.setItem("vehicle", v);
+                window.localStorage.setItem("seat", se);
+
+                document.write(s + "<br>" + "<br>")
+                document.write(l + "<br>" + "<br>");
+                document.write(d + "<br>" + "<br>");
+                document.write(v + "<br>" + "<br>");
+                document.write(se + "<br>" + "<br>");
+
+            } else {
+                document.write("Sorry! No Web Storage support..");
+            }
+        }
+        setTimeout(function() {
+            window.location.href = "plantrip.html";
+        }, 1);
+    </script>
+    <title>Display</title>
+</head>
+
+<body>
+    <a href="plantrip.html">Back to Plan Trip</a>
+    <form name="form1" action="next.html" method="get">
+        <table>
+            <tr>
+                <p>Mr User has Planned a trip from</p>
+                <p id="start">test</p>
+                <p>Will be going to</p>
+                <p id="end">try</p>
+                <p>On</p>
+                <p id="date">try</p>
+                <p>He will be going by</p>
+                <p id="vehicle">try</p>
+                <p> number Vaccant seats are:</p>
+                <p id="seat">try</p>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

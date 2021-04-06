@@ -1,0 +1,75 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+    // To add image on title bar
+    link(rel='shortcut icon', href='../../images/eco.ico')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+    // Google Material Icons
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    title Create Group
+    style.
+      body {
+      font-family: 'Roboto', sans-serif;
+      width: auto;
+      height: auto;
+      background-color: whitesmoke;
+      margin: 0;
+      }
+      .heading {
+      text-align: center;
+      font-weight: 600;
+      color: #051c2d;
+      text-align: center;
+      font-size: 3.5em;
+      font-family: 'Varela Round', sans-serif;
+      }
+      .welcomeText {
+      font-size: 2em;
+      text-align: center;
+      font-weight: 500;
+      color: #051c2d;
+      font-family: 'Varela Round', sans-serif;
+      }
+    script.
+  body
+    .container
+      p.heading Create your group
+      p.welcomeText "Connect & Grow"
+    .container
+      .row
+        form.col.s12(action='../club.html')
+          .row
+            .input-field.col.s12
+              i.material-icons.prefix add_comment
+              input#icon_prefix.validate(type='text')
+              label(for='icon_prefix') Group Name
+            .input-field.col.s12
+              i.material-icons.prefix insert_comment
+              input#icon_prefix.validate(type='text')
+              label(for='icon_prefix') Group Motto
+            .input-field.col.s12
+              p
+                | Do you want to keep your club Public or Private ?
+                br
+                label
+                  input.with-gap(name='group3', type='radio')
+                  span Public
+                br
+                label
+                  input.with-gap(name='group3', type='radio')
+                  span Private
+      button.btn.waves-effect.waves-light(style="background-color: #ffc107; color:#051c2d; font-size: 17px; font-family: 'Varela Round', sans-serif;", type='submit', name='action') Create
+    br
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')

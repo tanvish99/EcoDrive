@@ -1,0 +1,768 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="../unpkg.com/spectre.css%400.5.8/dist/spectre.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="../images/eco.ico" />
+    <!-- Minified JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<style>
+    body {
+        width: auto;
+        height: auto;
+        background-color: whitesmoke;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+    }
+    
+    nav.nav-center ul {
+        text-align: center;
+    }
+    
+    nav.nav-center ul li {
+        display: inline;
+        float: none;
+    }
+    
+    nav.nav-center ul li a {
+        display: inline-block;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+    });
+</script>
+
+
+<body>
+
+    <!-- NavBar -->
+    <nav style="background-color: #051c2d;">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="font-family: 'Varela Round', sans-serif;">EcoDrive</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../profile.html">Profile</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="../our_team.html">About</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-nav" style="width: 300px;">
+                <img src="../images/photo-1529665253569-6d01c0eaf7b6.jpeg" class="responsive-img" style="height: 17em; width: 300px;">
+                <li><a style="font-size: 1.1em;">Earth Saviour</a></li>
+                <hr>
+                <li><a href="../profile.html">Profile</a></li>
+                <li><a href="index.html">Leaderboard</a></li>
+                <li><a href="badges.html">Badges</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="../our_team.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content">
+        <div class="subPart">
+            <h2 style="color:#ffc107; font-family: 'Pacifico', cursive; font-size: 5em; font-weight: 1000;">Leaderboard</h2>
+
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th style="text-align: center; font-family: 'Varela Round', sans-serif; color:#051c2d;"> Name</th>
+                        <th></th>
+                        <th style="font-family: 'Varela Round', sans-serif; color:#051c2d;">Points</th>
+                        <th style="font-family: 'Varela Round', sans-serif; color:#051c2d;">Badges Earned</th>
+                    </tr>
+                    <tr class=" member ">
+                        <td>
+                            <a href="shreyas.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="10 ">
+                                    <img src="img/profile/shreyas.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="shreyas.html ">
+					       Shreyas Mulay
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:auto; font-size: 1em;">
+                                    1,350
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/10-contributions.png " alt="10-contributions ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Month Champion</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Saved highest amount of carbon footprint
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="9 ">
+                                    <img src="img/badges/adventure.png " alt="adventure ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Care Taker</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Completed 14 weeks of challenge using public transport and car pooling
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/novelist.png " alt="novelist ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Favourite Accompanist</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Highest rating gained in travel
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="6 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="chandler.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="10 ">
+                                    <img src="img/profile/chandler.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="chandler.html ">
+						Chandler Bing
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    850
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/10-contributions.png " alt="10-contributions ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Month Champion</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Saved highest amount of carbon footprint
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="9 ">
+                                    <img src="img/badges/adventure.png " alt="adventure ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Care Taker</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Completed 14 weeks of challenge using public transport and car pooling
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/novelist.png " alt="novelist ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Favourite Accompanist</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Highest rating gained in travel
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="sheldon.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="7 ">
+                                    <img src="img/profile/sheldon.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="sheldon.html ">
+            Sheldon
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    610
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/leaderboard.png " alt="leaderboard ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Eco-friendly</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Maximum number of car pooling exceeded
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/adventure.png " alt="adventure ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Care Taker</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Completed 14 weeks of challenge using public transport and car pooling
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="4 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="4 ">
+                                    <img src="img/badges/pirate.png " alt="pirate ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Zemerion</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Max car pooling Least individual activity Less carbon footprint
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="rahul.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="5 ">
+                                    <img src="img/profile/rahul.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="rahul.html ">
+						Rahul Gaur
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    400
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="3 ">
+                                    <img src="img/badges/leaderboard.png " alt="leaderboard ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Eco-friendly</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Maximum number of car pooling exceeded
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="3 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/pirate.png " alt="pirate ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Zemerion</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Max car pooling Least individual activity Less carbon footprint
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="vinayak.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="5 ">
+                                    <img src="img/profile/vinayak.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="vinayak.html ">
+						Vinayak Tevare
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    550
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="5 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="tanmai.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="5 ">
+                                    <img src="img/profile/tanmai.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="tanmai.html ">
+						Tanmai
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    720
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/pirate.png " alt="pirate ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Zemerion</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Max car pooling Least individual activity Less carbon footprint
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="sejal.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="5 ">
+                                    <img src="img/profile/sejal.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="sejal.html ">
+						Sejal
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    5330
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="4 ">
+                                    <img src="img/badges/adventure.png " alt="adventure ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Care Taker</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Completed 14 weeks of challenge using public transport and car pooling
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="eric.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="5 ">
+                                    <img src="img/profile/eric.jpg " alt="YZ " />
+                                    <img src="img/medal.png " class="avatar-icon ">
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="eric.html ">
+						Eric Grimson
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:100%; font-size: 1em; ">
+                                    630
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="3 ">
+                                    <img src="img/badges/adventure.png " alt="adventure ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Care Taker</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Completed 14 weeks of challenge using public transport and car pooling
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl badge " data-badge="3 ">
+                                    <img src="img/badges/taciturn.png " alt="taciturn ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">EcoGreen</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Week challenge completed to save carbon footprint by 70% to 90%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="member ">
+                        <td>
+                            <a href="darshana.html ">
+                                <figure class="avatar avatar-xl badge " data-initial="YZ " data-badge="1 ">
+                                    <img src="img/profile/darshana.jpg " alt="YZ " />
+                                </figure>
+                            </a>
+                        </td>
+                        <td><a href="darshana.html ">
+						Darshana
+					</a></td>
+                        <td>
+                            <div class="bar ">
+                                <div class="bar-item " style="width:20%; font-size: 1em;  ">
+                                    50
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- List of badges earned -->
+                            <div class="popover popover-top ">
+                                <figure class="avatar avatar-xl " data-badge="1 ">
+                                    <img src="img/badges/hacktoberfest.png " alt="hacktoberfest ">
+                                </figure>
+                                <div class="popover-container ">
+                                    <div class="card ">
+                                        <div class="card-header ">
+                                            <div class="text-large text-bold ">Green Saviour</div>
+                                        </div>
+                                        <div class="card-body ">
+                                            Minimal usage of vehicles for the month
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="nav-center" role="navigation" style="background-color: #051c2d; position: static; bottom: 0;">
+            <div class="nav-wrapper container">
+                <ul>
+                    <li><a href="#" style="color: #ffffff;">Pool Drive</a></li>
+                    <li><a href="../activity.html" style="color: #ffffff;">Activity</a></li>
+                    <li><a href="/community" style="color: #ffffff;">Community</a></li>
+                </ul>
+            </div>
+        </nav>
+
+</body>
+
+</html>

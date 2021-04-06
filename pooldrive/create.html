@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <script defer src="site.js"></script>
+
+    <link rel="manifest" href="manifest.json" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="js/main.js"></script>
+    <!--To add image on title bar-->
+    <link rel="shortcut icon" href="images/eco.ico" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+
+    <title>Create Event</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys&v=3.exp&sensor=false&libraries=places"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+
+        function testJS() {
+            var b = document.getElementById("from").value;
+            var c = document.getElementById("location").value;
+            var d = document.getElementById("date").value;
+            var e = document.getElementById("Vehicle").value;
+            var f = document.getElementById("seat").value;
+
+            url = 'D:/plantrip/display.html?from=' + encodeURIComponent(b) + '&location=' + encodeURIComponent(c) + '&date=' + encodeURIComponent(d) + '&Vehicle=' + encodeURIComponent(e) + '&seat=' + encodeURIComponent(f);
+
+            document.location.href = url;
+        }
+    </script>
+
+    <style>
+        label {
+            font-size: 1.1em;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <p style="text-align: center; font-weight: 600; color: #051c2d; text-align: center; font-size: 3.5em; font-family: 'Varela Round', sans-serif;">Event Details</p>
+        <p style="font-size: 2em; text-align: center; font-weight: 500; color: #051c2d; font-family: 'Varela Round', sans-serif;">"Plan & Travel"</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form action="/new" method="POST">
+                <div class="row">
+                    <label for="icon_telephone">Token</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">event_seat</i>
+                        <input id="token" name="token" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="icon_prefix">Start Location</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">my_location</i>
+                        <input id="from" name="from" type="text" class="validate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="icon_telephone">Destination</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">room</i>
+                        <input id="location" name="location" type="text" class="validate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="icon_telephone">Date</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="date" name="date" type="date" class="validate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label>Vehicle</label>
+                    <select class="browser-default" id="Vehicle" name="Vehicle">
+                            <option disabled selected>Choose your Vehicle</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Car">Car</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="icon_telephone">Number of Seats</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">event_seat</i>
+                        <input id="seat" name="seat" type="number" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                        <label for="icon_telephone">Price</label>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">event_seat</i>
+                            <input id="seat" name="seat" type="number" class="validate">
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <button class="btn waves-effect waves-light" type="submit"  style="background-color: #FDB813; border-radius: 15px; font-size: 15px; color:#000000;">Submit<i class="material-icons right">send</i></button>
+    </div>
+    </form>
+    </div>
+
+    <br><br>
+
+    <script>
+        function init() {
+            var input = document.getElementById('location');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            var input1 = document.getElementById('from');
+            var autocomplete1 = new google.maps.places.Autocomplete(input1);
+        }
+
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+
+</html>
+
+
+<!--key=AIzaSyCLa9iUQf41ANzURC7i9_pyWa5dAphrirs-->

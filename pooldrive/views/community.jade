@@ -1,0 +1,96 @@
+doctype html
+html
+  head
+    script(defer='', src='site.js')
+    link(rel='manifest', href='manifest.json')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Community
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', media='screen', href='css/main.css')
+    script(src='js/main.js')
+    // To add image on title bar
+    link(rel='shortcut icon', href='images/eco.ico')
+    // Minified JQuery
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Materialize Compiled and minified CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    // Google Material Icons
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Righteous', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+    script.
+      $(document).ready(function() {
+      $('.sidenav').sidenav();
+      });
+  body
+
+    // NavBar
+    nav(style='background-color: #051c2d;')
+      .nav-wrapper
+        a.brand-logo(href='#', style="font-family: 'Varela Round', sans-serif;") EcoDrive
+        a.sidenav-trigger(href='#', data-target='mobile-nav')
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
+          li
+            a(href='profile.html') Profile
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+        ul#mobile-nav.sidenav(style='width: 300px;')
+          img.responsive-img(src='images/nobody_m.original.jpg', style='height: 17em; width: 300px;')
+          li
+            a(style="font-size: 1.5em; font-family: 'Righteous', cursive;") Welcome! Earth saver
+          hr
+          li
+            a(href='profile.html') Profile
+          li
+            a(href='demo.opencart.com/redeem.html') Redeem Points
+          li
+            a(href='#') Privacy
+          li
+            a(href='our_team.html') About
+    br
+    // Info Icon
+    .container
+      a(href='information.html', style='text-decoration: none; color:#000000; float: right;')
+        i.material-icons info_outline
+    br
+    br
+    // Prize Position Stage
+    .container(style='text-align:center; position: relative;')
+      // <p style="position: absolute; margin-left: 10em; top: 0em;">Tanvish</p>
+      //
+        <p style="position: absolute;">Omkar</p>
+        <p style="position: absolute;">Amit</p>
+      a(href='hacktoberfest-leaderboard.herokuapp.com/leaderboard.html')
+        img.responsive-img(src='images/44096848-sport-or-business-winners-podium-vector-illustration-winners-stand-prize-podium-.jpg', alt='Prize Stand Image', width='70%', height='60%')
+      br
+      br
+      // <p style="font-size: 20px; color:#000000;"><b>Global Ranking :- 11<sup>th</sup></b></p>
+    br
+    // Tiles
+    .container(style='text-align:center;')
+      .col.s12(style='border: 2px solid #ffffff; background-color: #ffc107; color:#000000; height:50px; border-radius: 17px;font-size: 18px; padding: 7px 0px 0px 0px;')
+        a(href='club.html', style='text-decoration: none; color:#000000;') My Club
+      .col.s12(style='border: 2px solid #ffffff; background-color: #ffc107; color:#000000; height:50px; border-radius: 17px;font-size: 18px; padding: 7px 0px 0px 0px;')
+        a(href='plantrip.html', style='text-decoration: none; color:#000000;') Plan Trip
+      .col.s12(style='border: 2px solid #ffffff; background-color: #ffc107; color:#000000; height:50px; border-radius: 17px;font-size: 18px; padding: 7px 0px 0px 0px;')
+        a(href='tips.html', style='text-decoration: none; color:#000000;') Tips & Challenges
+    br
+    br
+    // Bottom Navigation
+    nav.nav-center(role='navigation', style='background-color: #051c2d; position: static; position: fixed; bottom: 0;')
+      .nav-wrapper.container
+        ul
+          li
+            a(href='https://afternoon-forest-99690.herokuapp.com/dashboard') Pool Drive
+          li
+            a(href='activity.html ') Activity
+          li
+            a(href='/community ') Community
+    // Compiled and minified JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js ')

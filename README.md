@@ -2,7 +2,7 @@
 
 Presented at ACM India Chapters Solution Contest and Smart India Hackathon
 
-EcoDrive is a mobile application which helps to reduce the carbon footprint of the travel proposal by car/bike pool and also lets you compare and compete with your friends on the carbon footprint of the travel. It tracks your daily carbon footprint and reward badges based on it. It also offers real-time navigation and provides daily challenges in order to reduce the carbon footprint.
+EcoDrive is a Progressive Web App(PWA) which helps to reduce the carbon footprint of the travel proposal by car/bike pool and also lets you compare and compete with your friends on the carbon footprint of the travel. It tracks your daily carbon footprint and reward badges based on it. It also offers real-time navigation and provides daily challenges in order to reduce the carbon footprint.
 
 ### Prerequisites
 
@@ -11,7 +11,7 @@ EcoDrive is a mobile application which helps to reduce the carbon footprint of t
 
 ### Installing
 
-1. Clone the project and move to the cloned directory
+1. Clone the project and change the directory to the cloned directory
 2. Type the command 'npm install'
 
 ## Running the tests
@@ -28,6 +28,9 @@ To test the PoolDrive module
 2. Type the command 'npm install'
 3. Connect to mongoDB server
 4. To run 'node app.js'
+
+## Video
+[EcoDrive](https://youtu.be/mv0ULQ2ddQw)
 
 ### Technologies used
 
